@@ -6,13 +6,22 @@ angular.module("MainCtrl", ['BeerService'])
   getBeers();
 
   function getBeers() {
-    Beers.get()
+    Beers.getAllBeers()
     .then(function(response) {
         $scope.beers = response.data;
         console.log($scope.beers);
       }, function(error) {
         $scope.status = "Unable to load beer data: " + error.message;
       });
+  }
+
+  $scope.addToDrink = (beer) => {
+    Beers.saveBeer(beer)
+    .then(function(response) {
+      console.log(response);
+    }, function(error) {
+      console.log(error);
+    })
   }
 
 });

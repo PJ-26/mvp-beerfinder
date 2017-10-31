@@ -10,14 +10,38 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, "client")));
 
-// app.get('/', (req, res) => {
-//   res.send('Node Working');
-// })
-
-app.post('/api/beer', (req,res) => {
-  console.log(req.body);
-  res.send("Post Worked");
+app.get('/api/mybeers', (req, res) => {
+  db.Beer.find({}, function(err, beers) {
+    if(err) console.log(err);
+    res.send(beers);
+  })
 })
+
+app.post('/api/mybeers', (req,res) => {
+  let newBeer = new db.Beer({
+    name: req.body.name,
+    image: req.body.image_url,
+    brewed: req.body.first_brewed,
+    description: req.body.description,
+    abv: req.body.abv,
+    toDrink: true
+  })
+
+  newBeer.save(err => console.log(err || newBeer));
+
+    res.send("Post Worked");
+})
+
+app.delete("/api/mybeers/:beer_id", (req, res) => {
+  console.log(req);
+  db.Beer.remove({ _id: req.params.beer_id }, (err, session) => {
+    if (err) console.error(err);
+    else {
+      console.log("DELETED");
+    }
+  });
+  res.send(`${req.params.beer_id} Deleted!`);
+});
 
 
 app.listen(process.env.PORT, () => {

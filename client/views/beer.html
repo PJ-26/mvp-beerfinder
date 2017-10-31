@@ -1,5 +1,13 @@
 <div class="jumbotron text-center">
   <h1>Beers</h1>
-
   <p>{{ tagline }}</p>
+</div>
+<div class="container">
+  <div class="row">
+    <div data-ng-repeat="myBeer in myBeers" class="col-md-3">
+      <b>{{ myBeer.name }}</b> {{ myBeer.description }}
+      <button type="button" ng-click="removeMyBeer(myBeer._id)">Remove</button>
+
+    </div>
+  </div>
 </div>

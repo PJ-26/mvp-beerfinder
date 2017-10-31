@@ -4,9 +4,17 @@
 </div>
 <div class="container">
   <div class="row">
-    <div data-ng-repeat="myBeer in myBeers" class="col-md-3">
-      <b>{{ myBeer.name }}</b> {{ myBeer.description }}
+    <div class="panel panel-default" data-ng-repeat="myBeer in myBeers" class="col-md-3">
+      <img src="{{myBeer.image}}" width='100' height='100'>
+
+      <b>{{ myBeer.name }}</b>
+      <p>
+         {{ myBeer.description }}
+      </p> 
+
+      <div>
       <button type="button" ng-click="removeMyBeer(myBeer._id)">Remove</button>
+      </div>
 
     </div>
   </div>

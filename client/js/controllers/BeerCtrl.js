@@ -17,6 +17,7 @@ angular.module("BeerCtrl", ['BeerService'])
   $scope.removeMyBeer = (id) => {
     Beers.deleteMyBeer(id)
     .then(function(response) {
+      getMyBeers();
       console.log(response);
     }, function(error) {
       console.log(error);

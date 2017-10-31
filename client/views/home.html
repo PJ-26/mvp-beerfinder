@@ -3,10 +3,16 @@
 </div>
 <div class="container">
   <div class="row">
-    <div data-ng-repeat="beer in beers" class="col-md-3">
-      <b>{{ beer.name }}</b> {{beer.description}}
-      <button type="button" ng-click="addToDrink(beer)">Add To Drink</button>
+    <div class="panel panel-default" data-ng-repeat="beer in beers" class="col-md-3">
+      <img src="{{beer.image_url}}" width='100' height='100' >
 
+      <b>{{ beer.name }}</b> 
+      <p>
+         {{beer.description}}
+      </p>
+      <div>
+      <button type="button" ng-click="addToDrink(beer)">Add To Drink</button>
+      </div>
     </div>
   </div>
 </div>

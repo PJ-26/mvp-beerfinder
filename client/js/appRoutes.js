@@ -12,7 +12,12 @@ angular.module("appRoutes", []).config([
       .when("/beers", {
         templateUrl: "views/beer.html",
         controller: "BeerController"
-      });
+      })
+
+      .when('/addYourOwn', {
+        templateUrl: 'views/addYourOwn.html',
+        controller: "AddYourOwnController"
+      })
 
     $locationProvider.html5Mode(true);
   }

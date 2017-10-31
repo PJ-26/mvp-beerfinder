@@ -3,5 +3,6 @@ angular.module("Hopster", [
   "appRoutes",
   "MainCtrl",
   "BeerCtrl",
+  "AddYourOwnCtrl",
   "BeerService"
 ]);

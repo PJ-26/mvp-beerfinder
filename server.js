@@ -33,7 +33,6 @@ app.post('/api/mybeers', (req,res) => {
 })
 
 app.delete("/api/mybeers/:beer_id", (req, res) => {
-  console.log(req);
   db.Beer.remove({ _id: req.params.beer_id }, (err, session) => {
     if (err) console.error(err);
     else {

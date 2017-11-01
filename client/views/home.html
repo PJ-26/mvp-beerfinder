@@ -15,14 +15,6 @@
 
   <br>
 
-  <!-- <div class="row">
-    <div class="col-sm-4" ng-repeat='beer in beers | filter: searchedData' >
-      <img src="{{beer.image_url}}" width='55' height='120' align=left>
-      <b>{{ beer.name }}</b>
-      <p class="text-left">{{beer.description}}</p>
-    </div>
-    
-  </div> -->
 
     <div class="row" >
       <div class="col-md-12" ng-repeat='beer in beers | filter: searchedData' >
@@ -42,16 +34,5 @@
       </div>
     </div>
 
-  <!-- <div class="row">
-    <div class="panel panel-default" class="col-md-3" ng-repeat="beer in beers | filter : searchedData" >
-      <div>
-      <img src="{{beer.image_url}}" width='55' height='120'>
-      </div>
-      <b>{{ beer.name }}</b> 
-      <p>{{beer.description}}</p>
-      <div>
-      <button class='glyphicon glyphicon-star'  type="button" ng-click="addToDrink(beer)"></button>
-      </div>
-    </div>
-  </div> -->
+
 </div>

@@ -2,36 +2,24 @@
   <h1>Beers</h1>
   <p>{{ tagline }}</p>
 </div>
+
 <div class="container">
-  
-
-
-
   <div class="row">
     <div class="col-md-12" ng-repeat="myBeer in myBeers">
       <div class="thumbnail">
         <img src="{{myBeer.image}}" style="width:5%">
         <div class="caption">
-          <b>{{myBeer.name}}</b>
-          <p>{{myBeer.description}}</p>
+         <h2><b>{{myBeer.name}}</b></h2>     
+         <h5>First Brewed: {{myBeer.brewed}}</h5>     
+          <h5><em>ABV: {{myBeer.abv}}</em></h5>
+
         </div>
         <p>
           <button type="button" class="btn btn-danger" ng-click="removeMyBeer(myBeer._id)">
         <span class="glyphicon glyphicon-trash"></span>
         </button>
         </p>
-
       </div>
-      
-      <!-- <b>{{ myBeer.name }}</b>
-      <p>
-         {{ myBeer.description }}
-      </p> 
-
-      <div>
-      <button class='glyphicon glyphicon-trash' type="button" ng-click="removeMyBeer(myBeer._id)"></button>
-      </div> -->
-
     </div>
   </div>
 </div>

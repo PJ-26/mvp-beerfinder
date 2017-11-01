@@ -19,21 +19,4 @@ const beerSchema = mongoose.Schema({
 
 const Beer = mongoose.model("Beer", beerSchema);
 
-const insertBeer = beer =>
-  new Beer(beer).save((err, newBeer) =>
-    console.log(err || newBeer)
-  );
-
-  //Test Beer
-// let newBeer = new Beer({
-//   name: "Test Beer",
-//   image: "https://images.punkapi.com/v2/keg.png",
-//   brewed: "09/2007",
-//   description: "Test Description",
-//   abv: 4.5,
-//   toDrink: true
-// });
-
-// newBeer.save(err => console.log(err || newBeer));
-
 module.exports.Beer = Beer;

@@ -7,7 +7,6 @@ const db = require("./dbconfig.js")
 
 app.use(bodyParser.urlencoded({ extended: "true" }));
 app.use(bodyParser.json());
-
 app.use(express.static(path.join(__dirname, "client")));
 
 app.get('/api/mybeers', (req, res) => {
@@ -26,10 +25,8 @@ app.post('/api/mybeers', (req,res) => {
     abv: req.body.abv,
     toDrink: true
   })
-
   newBeer.save(err => console.log(err || newBeer));
-
-    res.send("Post Worked");
+  res.send("Post Worked");
 })
 
 app.delete("/api/mybeers/:beer_id", (req, res) => {
@@ -41,7 +38,6 @@ app.delete("/api/mybeers/:beer_id", (req, res) => {
   });
   res.send(`${req.params.beer_id} Deleted!`);
 });
-
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening on ${process.env.PORT}`);

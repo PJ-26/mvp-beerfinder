@@ -5,4 +5,4 @@ angular
     $scope.addUserBeer = () => {
       console.log($scope.userBeer);
     }
-  });
+});
